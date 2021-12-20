@@ -5,7 +5,7 @@ _COMMIT=fdafc79cf4e41bb675e59786844bea442ce6c084
 TERMUX_PKG_VERSION="0.167-${_COMMIT:0:8}"
 TERMUX_PKG_SRCURL=https://github.com/Macronut/phantomsocks.git
 TERMUX_PKG_GIT_BRANCH=master
-TERMUX_PKG_BUILD_DEPENDS="libpcap"
+TERMUX_PKG_DEPENDS="libpcap"
 TERMUX_PKG_LICENSE_FILE=LICENSE
 
 termux_step_post_get_source() {
