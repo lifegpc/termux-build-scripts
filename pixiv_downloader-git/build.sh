@@ -11,7 +11,8 @@ TERMUX_PKG_LICENSE_FILE="LICENSE"
 
 termux_step_post_get_source() {
     cd $TERMUX_PKG_SRCDIR
-    git pull
+    git config uploadpack.allowReachableSHA1InWant true
+    git fetch origin "$_COMMIT"
     git checkout $_COMMIT
 }
 
