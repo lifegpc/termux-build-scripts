@@ -14,6 +14,7 @@ termux_step_post_get_source() {
     git config uploadpack.allowReachableSHA1InWant true
     git fetch origin "$_COMMIT"
     git checkout $_COMMIT
+    git submodule update --init
 }
 
 termux_step_configure() {
