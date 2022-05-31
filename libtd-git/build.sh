@@ -3,8 +3,8 @@ TERMUX_PKG_DESCRIPTION="Library for building Telegram clients"
 TERMUX_PKG_LICENSE="BSL-1.0"
 TERMUX_PKG_REPLACES=libtd
 TERMUX_PKG_PROVIDES="tdlib, libtd"
-_COMMIT=4eaae3306829be9aa66f9dd2a7e3d3895e01841e
-TERMUX_PKG_VERSION="1.7.0-1935-g${_COMMIT:0:8}"
+_COMMIT=c5dfa597828e9250ac29b6e37320220411bce870
+TERMUX_PKG_VERSION="1.8.0-659-g${_COMMIT:0:8}"
 TERMUX_PKG_SRCURL="https://github.com/tdlib/td.git"
 TERMUX_PKG_GIT_BRANCH=master
 TERMUX_PKG_DEPENDS="readline, openssl (>= 1.1.1), zlib"
@@ -13,6 +13,8 @@ TERMUX_PKG_MAINTAINER=lifegpc
 
 termux_step_post_get_source() {
     cd $TERMUX_PKG_SRCDIR
+    git config uploadpack.allowReachableSHA1InWant true
+    git fetch origin "$_COMMIT"
     git checkout $_COMMIT
 }
 
