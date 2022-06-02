@@ -1,10 +1,10 @@
 TERMUX_PKG_HOMEPAGE=https://github.com/natesales/q
 TERMUX_PKG_DESCRIPTION="A tiny command line DNS client with support for UDP, DoT, DoH, DoQ and ODoH."
 TERMUX_PKG_LICENSE="GPL-3.0"
-TERMUX_PKG_VERSION=0.7.1
-TERMUX_PKG_SRCURL=https://github.com/natesales/q/archive/refs/tags/v0.7.1.tar.gz
+TERMUX_PKG_VERSION=0.8.0
+TERMUX_PKG_SRCURL=https://github.com/natesales/q/archive/refs/tags/v0.8.0.tar.gz
 TERMUX_PKG_LICENSE_FILE=LICENSE
-TERMUX_PKG_SHA256=bc5f58f5d856c47794ef94dd309392912692dc1b135d99cd85c3f780e69e312c
+TERMUX_PKG_SHA256=813d0a42a45a354a2c43af153ee1ceb8eae98ae7e61030cbfca68d779717b333
 
 termux_step_make() {
     cd $TERMUX_PKG_SRCDIR
