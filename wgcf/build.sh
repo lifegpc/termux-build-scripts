@@ -3,9 +3,9 @@ TERMUX_PKG_DESCRIPTION="🚤 Cross-platform, unofficial CLI for Cloudflare Warp"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_LICENSE_FILE="LICENSE"
 TERMUX_PKG_MAINTAINER="lifegpc"
-TERMUX_PKG_VERSION=2.2.14
-TERMUX_PKG_SRCURL=https://github.com/ViRb3/wgcf/archive/refs/tags/v2.2.14.tar.gz
-TERMUX_PKG_SHA256=64b6e62cc9b7ca1b91757ee067e7c6adf923faff64e3daeebbf07ad817ce73aa
+TERMUX_PKG_VERSION=2.2.15
+TERMUX_PKG_SRCURL=https://github.com/ViRb3/wgcf/archive/refs/tags/v2.2.15.tar.gz
+TERMUX_PKG_SHA256=b12971018c40d0a04492a9da9e9fea393394291044045e0117ec292364de1b57
 
 termux_step_make() {
     cd $TERMUX_PKG_SRCDIR
