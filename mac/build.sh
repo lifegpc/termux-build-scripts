@@ -4,9 +4,9 @@ TERMUX_PKG_LICENSE="see https://monkeysaudio.com/license.html"
 TERMUX_PKG_LICENSE_FILE="Readme.txt"
 TERMUX_PKG_MAINTAINER="lifegpc"
 TERMUX_PKG_DEPENDS="libc++"
-TERMUX_PKG_VERSION=7.81
-TERMUX_PKG_SRCURL=https://monkeysaudio.com/files/MAC_SDK_781.zip
-TERMUX_PKG_SHA256=5129eeddd4c27b1bcfbb0357e58f08203f32dd02cb312db6f60600a575c89050
+TERMUX_PKG_VERSION=8.08
+TERMUX_PKG_SRCURL=https://monkeysaudio.com/files/MAC_SDK_808.zip
+TERMUX_PKG_SHA256=7976621cdb8d3701e98fa7d18df7e44da9c37e46c7b712c2e7b47b5605d875dd
 
 termux_step_get_source() {
     curl -L "$TERMUX_PKG_SRCURL" -o tmp.zip || exit 1
