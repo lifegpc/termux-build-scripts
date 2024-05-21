@@ -2,19 +2,25 @@ TERMUX_PKG_HOMEPAGE=https://github.com/lifegpc/pixiv_downloader
 TERMUX_PKG_DESCRIPTION="A pixiv downloader written in Rust"
 TERMUX_PKG_LICENSE="AGPL-3.0"
 TERMUX_PKG_MAINTAINER="lifegpc"
-_COMMIT=6857334f531985e757395770e553591a3f06c5a3
-TERMUX_PKG_VERSION="0.0.0-299-g${_COMMIT:0:8}"
+_COMMIT=670f55f3666ae386c7616a53439fb11de7f23a95
+TERMUX_PKG_VERSION="0.0.0-963-g${_COMMIT:0:8}"
 TERMUX_PKG_SRCURL=https://github.com/lifegpc/pixiv_downloader.git
 TERMUX_PKG_GIT_BRANCH=master
 TERMUX_PKG_DEPENDS="exiv2-git, ffmpeg, libzip"
 TERMUX_PKG_LICENSE_FILE="LICENSE"
 
-termux_step_post_get_source() {
-    cd $TERMUX_PKG_SRCDIR
+termux_step_get_source() {
+    local TMP_CHECKOUT=$TERMUX_PKG_CACHEDIR/tmp-checkout
+    rm -rf $TMP_CHECKOUT
     git config uploadpack.allowReachableSHA1InWant true
+    git clone --branch "$TERMUX_PKG_GIT_BRANCH" "${TERMUX_PKG_SRCURL:4}" $TMP_CHECKOUT
+    cd $TMP_CHECKOUT
+    rm -rf $TERMUX_PKG_SRCDIR
+    cp -Rf $TMP_CHECKOUT $TERMUX_PKG_SRCDIR
+    cd $TERMUX_PKG_SRCDIR
     git fetch origin "$_COMMIT"
     git checkout $_COMMIT
-    git submodule update --init
+    git submodule update --init --recursive
 }
 
 termux_step_configure() {
