@@ -3,9 +3,9 @@ TERMUX_PKG_DESCRIPTION='Composing and deciphering C (or C++) declarations or cas
 TERMUX_PKG_LICENSE='GPL-3.0'
 TERMUX_PKG_LICENSE_FILE=COPYING
 TERMUX_PKG_MAINTAINER=lifegpc
-TERMUX_PKG_VERSION=11.15
-TERMUX_PKG_SRCURL=https://github.com/paul-j-lucas/cdecl/releases/download/cdecl-11.15/cdecl-11.15.tar.gz
-TERMUX_PKG_SHA256=548d9daba9202b660223fce5f78c2ba0c0886d7c51ab2a008e0a758812a41c06
+TERMUX_PKG_VERSION=16.3
+TERMUX_PKG_SRCURL=https://github.com/paul-j-lucas/cdecl/releases/download/cdecl-16.3/cdecl-16.3.tar.gz
+TERMUX_PKG_SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 TERMUX_PKG_DEPENDS='readline'
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS='--disable-cdecl-debug'
 
