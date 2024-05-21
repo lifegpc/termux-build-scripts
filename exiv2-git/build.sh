@@ -14,14 +14,14 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 -DEXIV2_ENABLE_VIDEO=ON
 -DEXIV2_ENABLE_BUILD_SAMPLES=OFF"
 
-termux_step_post_get_source() {
+termux_step_get_source() {
     local TMP_CHECKOUT=$TERMUX_PKG_CACHEDIR/tmp-checkout
     rm -rf $TMP_CHECKOUT
     git clone --branch "$TERMUX_PKG_GIT_BRANCH" "${TERMUX_PKG_SRCURL:4}" $TMP_CHECKOUT
     cd $TMP_CHECKOUT
     git submodule update --init --recursive
     rm -rf $TERMUX_PKG_SRCDIR
-	cp -Rf $TMP_CHECKOUT $TERMUX_PKG_SRCDIR
+    cp -Rf $TMP_CHECKOUT $TERMUX_PKG_SRCDIR
     cd $TERMUX_PKG_SRCDIR
     git checkout $_COMMIT
 }
