@@ -12,12 +12,12 @@ TERMUX_PKG_LICENSE_FILE="LICENSE"
 termux_step_get_source() {
     local TMP_CHECKOUT=$TERMUX_PKG_CACHEDIR/tmp-checkout
     rm -rf $TMP_CHECKOUT
-    git config uploadpack.allowReachableSHA1InWant true
     git clone --branch "$TERMUX_PKG_GIT_BRANCH" "${TERMUX_PKG_SRCURL:4}" $TMP_CHECKOUT
     cd $TMP_CHECKOUT
     rm -rf $TERMUX_PKG_SRCDIR
     cp -Rf $TMP_CHECKOUT $TERMUX_PKG_SRCDIR
     cd $TERMUX_PKG_SRCDIR
+    git config uploadpack.allowReachableSHA1InWant true
     git fetch origin "$_COMMIT"
     git checkout $_COMMIT
     git submodule update --init --recursive
